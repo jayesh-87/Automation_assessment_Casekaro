@@ -1,26 +1,120 @@
-# **CaseKaro QA Automation Assessment**
+# CaseKaro QA Automation Assessment
 
-## **Overview**
+## 📌 Project Overview
+This project is a QA Automation framework built to validate search behavior, product filtering, and cart functionality on the CaseKaro website.
 
-This project is an automated test suite for the [CaseKaro](https://casekaro.com/) e-commerce platform. It validates the "Mobile Covers" user journey, specifically focusing on:
+The automation covers:
+- Brand search validation
+- Negative validation to ensure other brands do not appear in results
+- Adding multiple product material variants to the cart
+- Verifying cart item count
+- Generating a final cart audit report with product details
 
-1. **Search Logic:** Verifying brand isolation (e.g., searching for "Apple"/"iPhone" excludes "Samsung").  
-2. **Cart Operations:** Adding multiple material variants (Hard, Soft, Glass) of the same product.  
-3. **Data Integrity:** Auditing the final cart prices and links.
+---
 
-**Tech Stack:** Java, Playwright, Maven.
+## 🛠 Tech Stack
+- **Java (JDK 11+)**
+- **Maven**
+- **Playwright for Java**
+- **Windows PowerShell / Terminal**
 
-##  **Project Structure**
+---
 
-* src/java/CaseKaroTest.java \- The main automation script.  
-* docs/Test\_Test\_Plan\_Casekaro.md \- Strategy and scope definition.  
-* docs/Test\_Case.csv \- Detailed test steps and expected results.  
-* docs/Test\_Execution\_Report.md \- Summary of the latest test run.
+## 📂 Project Structure
 
-##  **Key Highlights of the Code**
+```
+AutomationAssessment/
+│
+├── src/
+│   └── main/
+│       └── java/
+│           └── com/Casekaro  
+│           └── CaseKaroTest.java
+│
+├── Docs/
+│   └── Test/
+│       ├── Test_Plan_Casekaro.docx
+│       ├── Test_Cases.xlsx
+│       └── Test_Execution_Report.docx
+│
+├── pom.xml
+└── README.md
+```
 
-* **Negative Validation Logic:** A custom method validateNoOtherBrands() parses search results to strictly ensure no competitor brands appear in specific searches.  
-* **Resilient Locators:** Uses locator().filter() and scrollIntoViewIfNeeded() to handle dynamic content and overlays without hard-coding fragile XPaths.  
-* **Console Reporting:** Generates a structured "Audit Report" at the end of execution for quick debugging.
+---
 
-**Author:** Jayesh Solanke
+## ⚙️ Setup Instructions
+
+### 1️⃣ Install Prerequisites
+Make sure the following are installed:
+- Java JDK 11 or higher
+- Maven
+- Git (optional)
+
+Check versions:
+```
+java -version
+mvn -version
+```
+
+---
+
+### 2️⃣ Install Playwright Browsers (First Time Only)
+
+Run this from the project root:
+
+```
+mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
+```
+
+---
+
+### 3️⃣ Run the Automation Test
+
+```
+mvn clean compile exec:java
+```
+
+---
+
+## ✅ Expected Execution Flow
+
+1. Launch browser using Playwright
+2. Search for **Apple** → validate that no other brand models appear
+3. Search for **iPhone** → validate brand filtering again
+4. Open a product page
+5. Add **Soft**, **Glass**, and **Hard** material variants to cart
+6. Open cart and verify **3 items are present**
+7. Print **Final Cart Audit Report** including:
+   - Material type
+   - Price
+   - Product link
+
+---
+
+## 📊 Sample Console Output
+
+```
+Negative Validation Passed for 'iPhone' search results.
+
+================ FINAL CART AUDIT REPORT ================
+ITEM 1:
+ - Material: Soft
+ - Price    : Rs. 149.00
+ - Full Link: https://casekaro.com/...
+---------------------------------------------------------
+```
+
+---
+
+## 🧪 Test Documentation Included
+
+Inside the **Docs/Test** folder:
+- Test Plan
+- Test Cases
+- Test Execution Report
+
+---
+
+## 👤 Author
+**Jayesh Solanke**

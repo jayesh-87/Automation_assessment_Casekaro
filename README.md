@@ -1,6 +1,6 @@
 # CaseKaro QA Automation Assessment
 
-## 📌 Project Overview
+##  Project Overview
 This project is a QA Automation framework built to validate search behavior, product filtering, and cart functionality on the CaseKaro website.
 
 The automation covers:
@@ -20,7 +20,7 @@ The automation covers:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 AutomationAssessment/
@@ -45,7 +45,7 @@ AutomationAssessment/
 
 ## ⚙️ Setup Instructions
 
-### 1️⃣ Install Prerequisites
+### 1️ Install Prerequisites
 Make sure the following are installed:
 - Java JDK 11 or higher
 - Maven
@@ -59,7 +59,7 @@ mvn -version
 
 ---
 
-### 2️⃣ Install Playwright Browsers (First Time Only)
+### 2️ Install Playwright Browsers (First Time Only)
 
 Run this from the project root:
 
@@ -69,7 +69,7 @@ mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="inst
 
 ---
 
-### 3️⃣ Run the Automation Test
+### 3️ Run the Automation Test
 
 ```
 mvn clean compile exec:java
@@ -77,7 +77,7 @@ mvn clean compile exec:java
 
 ---
 
-## ✅ Expected Execution Flow
+##  Expected Execution Flow
 
 1. Launch browser using Playwright
 2. Search for **Apple** → validate that no other brand models appear
@@ -92,7 +92,7 @@ mvn clean compile exec:java
 
 ---
 
-## 📊 Sample Console Output
+## Sample Console Output
 
 ```
 Negative Validation Passed for 'iPhone' search results.
@@ -107,7 +107,7 @@ ITEM 1:
 
 ---
 
-## 🧪 Test Documentation Included
+## Test Documentation Included
 
 Inside the **Docs/Test** folder:
 - Test Plan
@@ -116,5 +116,5 @@ Inside the **Docs/Test** folder:
 
 ---
 
-## 👤 Author
+## Author
 **Jayesh Solanke**

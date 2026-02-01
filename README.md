@@ -12,7 +12,7 @@ The automation covers:
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 - **Java (JDK 11+)**
 - **Maven**
 - **Playwright for Java**
@@ -43,7 +43,7 @@ AutomationAssessment/
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1️ Install Prerequisites
 Make sure the following are installed:
